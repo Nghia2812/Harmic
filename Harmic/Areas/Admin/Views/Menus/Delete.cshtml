@@ -1,0 +1,97 @@
+﻿@model Harmic.Models.TbMenu
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Xoá menu</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Gallery</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Left column -->
+                <div class="col-md">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Xoá menu</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Form to create new menu -->
+                            
+
+                                <!-- Title Field -->
+                                <div class="form-group">
+                                    <label for="exeampleInputEmail">Tiêu đề:</label>                                 
+                                    @Html.DisplayFor(Model => Model.Title)
+                                </div>
+                                <!-- Alias Field -->
+                                <div class="form-group">
+                                <label for="exeampleInputPassword1">Alias:</label>
+                                     @Html.DisplayFor(Model => Model.Alias)
+                                </div>
+
+                                <!-- Description Field -->
+                                <div class="form-group">
+                                <label for="exeampleInputPassword1">Mô tả:</label>
+                                     @Html.DisplayFor(Model => Model.Levels)
+                                </div>
+
+                                <!-- Levels Field -->
+                                <div class="form-group">
+                                <label for="exeampleInputPassword1">Mức:</label>
+                                    @Html.DisplayFor(Model => Model.Levels)      
+                                </div>
+
+                                <!-- ParentId Field -->
+                                <div class="form-group">
+                                <label for="exeampleInputPassword1">Menu cha:</label>
+                                     @Html.DisplayFor(Model => Model.Levels)
+                                </div>
+
+                            <!-- ParentId Field -->
+                            <div class="form-group">
+                                <label for="exeampleInputPassword1">Hiện:</label>
+                                @Html.DisplayFor(Model => Model.IsActive)
+                            </div>
+                               
+                               @*  <!-- IsActive Checkbox -->
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="IsActive" /> Hiện thị
+                                    </label>
+                                </div>
+                               
+ *@
+                                     <form asp-action="Detele">
+                                         <input type="hidden" asp-for="MenuId" />
+                                         <input type="submit" value="Xoá" class="btn btn-danger" />
+                                         <a asp-action="Index" class=" btn btn-primary">Quay lai</a>
+                                     </form>
+                                <!-- Submit Button -->
+                                                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
